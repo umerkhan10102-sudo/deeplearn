@@ -1,0 +1,33 @@
+# Practical No. 1
+# Practical Name: Introduction to Neural Network
+# Aim: Artificial Neuron and Perceptron Implementation
+
+import numpy as np
+
+# Input data
+X = np.array([
+    [0, 0],
+    [0, 1],
+    [1, 0],
+    [1, 1]
+])
+
+# Expected output
+y = np.array([0, 0, 1, 1])
+
+# Initialize weight and bias
+weight = np.array([1, 1])
+bias = -1.5
+
+# Step Activation Function
+def activation(x):
+    return 1 if x >= 0 else 0
+
+# Perceptron Output
+print("Perceptron Output:")
+
+for i in range(len(X)):
+    summation = np.dot(X[i], weight) + bias
+    output = activation(summation)
+
+    print(X[i], "==", output)
